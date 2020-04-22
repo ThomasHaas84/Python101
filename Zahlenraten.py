@@ -67,8 +67,7 @@ def new_round():
         game.play()
         if input("\nZum Beenden 'q', beliebige Taste für Neustart.") == "q":
             break
-        else:
-            pass
+        
 
 
 new_round()
