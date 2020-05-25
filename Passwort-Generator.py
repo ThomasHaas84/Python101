@@ -35,8 +35,9 @@ die_adjektive = ["müd", "wach", "schnell", "langsam", "feucht", "trocken", "sti
              "verbindlich", "verführerisch", "wortgewandt", "warmherzig", "wertvoll", "zauberhaft", "zaghaft", "zeitlos", "zuverlässig",
              "zwischenmenschlich", "grotesk", "faschistoid", "kafkaesk", "aromatisch", "giftig", "faltig", "diskret", "zerknirscht", "gedehnt",
              "gespreitzt", "schüchtern", "locker", "tollpatschig", "anmaßend", "auferstanden", "verzaubert", "verlaust", "hollisch",
-                ]
+             "promoviert", "erzkonservativ", "rechtspopulistisch", "elitär", ]
 
+# Doppelgänger entfernen
 die_adjektive = list(set(die_adjektive))
 
 
@@ -71,9 +72,11 @@ die_nomen = ["der_Bagger", "der_Elefant", "das_Einhorn", "die_Kuh", "die_Maus", 
          "das Abenteuer", "das Geständnis", "die Beichte", "die Nachtwache", "die Pflaume", "die Hölle",
              ]
 
+# Doppelgänger entfernen
 die_nomen = list(set(die_nomen))
 
 
+# Programmvorstellung
 print("-" * 33)
 print("Willkommen im Passwort-Generator!")
 print("-" * 33)
@@ -81,6 +84,7 @@ print(len(die_adjektive), "Adjektive")
 print(len(die_nomen),  "Nomen")
 
 
+# Hauptschleife
 while True:
     adjektiv = random.choice(die_adjektive)
     nomen = random.choice(die_nomen)
