@@ -1,53 +1,28 @@
 
 # Rollenspielwürfel
-# Konsolenwürfel mit beliebiger Würfelgröße
+# Konsolenwürfel mit beliebiger Würfelgröße 
 
 
 import random
 
-# Hauptschleife
-run = True
-while run:
-    print("-" * 24)
-    print("Rollenspielwürfel")
-    print("-" * 24)
 
-    # Anfangszahl
-    eingabe_A = True
-    while eingabe_A:
-        A = (input("\nAnfangszahl eingeben: "))
-        try:
-            A = int(A)
-        except:
-            ValueError
-            print("Falsche Eingabe.")
-        else:
-            eingabe_A = False
-
-    # Endzahl
-    eingabe_E = True
-    while eingabe_E:
-        E = (input("Endzahl eingeben: "))
-        try:
-            E = int(E)
-        except:
-            ValueError
-            print("Falsche Eingabe.")
-        else:
-            eingabe_E = False
-
-    # Zahl würfeln
-    Zahl = random.randint(A, E)
-
-    print("-" * 24)
-    print("Die gewürfelte Zahl ist: " + str(Zahl))
-    print("-" * 24)
-    print()
-
-
-    # Programm beenden
-    if input("Beliebige Taste zum Würfeln drücken.\n q zum beenden drücken.") == "q":
-        break
+def würfel(würfelzahl: int = 1, seiten: int = 6):
+    würfel_liste = []
+    if würfelzahl == 1:
+        print()
+        print("Ein", seiten, "seitiger Würfel rollt:")
+    else:
+        print()
+        print(würfelzahl, seiten, "seitige Würfel rollen:")
+    try:
+        while 0 < würfelzahl < 100:
+            x = random.randint(1, seiten)
+            würfel_liste.insert(0, x)
+            würfelzahl -= 1
+        würfel_liste.sort()
+        print(würfel_liste)
+    except:
+        print("Keine Ahnung, wie ich das würfeln soll.")
 
 
 
